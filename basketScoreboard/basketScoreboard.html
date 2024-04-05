@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/scoreboard.css">
+    <link rel="stylesheet" href="./style/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Bungee+Spice&family=Monoton&family=Spicy+Rice&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="before-match ">
+        <div class="formulaire">
+            <div class="loc">
+                <div class="name">
+                    <form action="" id="set_name_loc">
+                        <input type="text" name="" id="name_loc" placeholder="Locaux">
+                        <input type="submit" value="Apply" class="apply-button">
+                    </form>
+                </div>
+                <div class="player">
+                    <form id="set_player_loc">
+                        <input type="number" name="" class="nb_player" min="0" max="99">
+                        <input type="text" name="" class="name_player">
+                        <input type="submit" value="Apply">
+                    </form>
+                </div>
+            </div>
+
+            <div class="visit">
+                <div class="name">
+                    <form action="" id="set_name_visit">
+                        <input type="text" name="" id="name_visit" placeholder="Visiteurs">
+                        <input type="submit" value="Apply" class="apply-button">
+                    </form>
+                </div>
+                <div class="player">
+                    <form id="set_player_visit">
+                        <input type="number" name="" class="nb_player" min="0" max="99">
+                        <input type="text" name="" class="name_player">
+                        <input type="submit" value="Apply">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="switch" class="funky-container">
+            <p class="funky-base">GAME TIME ! </p>
+            <p class="funky-letter fl-1">GAME TIME ! </p>
+            <p class="funky-letter fl-2">GAME TIME ! </p>
+            <p class="funky-letter fl-3">GAME TIME ! </p>
+            <p class="funky-letter fl-4">GAME TIME ! </p>
+            <p class="funky-letter fl-5">GAME TIME ! </p>
+            <p class="funky-letter fl-6">GAME TIME ! </p>
+            <p class="funky-letter fl-7">GAME TIME ! </p>
+        </div>
+    </div>
+    <div class="players-list">
+        <div class="player-div loc">
+            <div>
+                <p class="team-name">Locaux</p>
+            </div>
+            <ul class="player_list to-clr"></ul>
+        </div>
+
+        <div class="player-div visit">
+            <div>
+                <p class="team-name">Visit</p>
+            </div>
+            <ul class="player_list to-clr"></ul>
+        </div>
+    </div>
+    <div class="in-match hidden">
+        <div class="timer">
+            <p class="screen">10:00</p>
+        </div>
+        <div class="timerButtons">
+
+            <div class="set_time_div">
+                <form id="set_time">
+                    <input type="" name="" id="new_time_value" value="10:00">
+                    <input type="submit" value="Apply">
+                </form>
+            </div>
+            <button class="start-timer">Start</button>
+            <button class="reset-timer">Reset</button>
+            <button class="stop-timer">Stop</button>
+        </div>
+        <div class="logos">
+            <div class=" loc"></div>
+            <div class=" visit"></div>
+        </div>
+
+
+        <div class="points_div loc">
+            <p>Score : <span class="score to-reset">0</span></p>
+            <button onclick="add('loc', -1)">-1</button>
+            <button onclick="add('loc', 1)">+1</button>
+            <button onclick="add('loc', 2)">+2</button>
+            <button onclick="add('loc', 3)">+3</button>
+        </div>
+        <div class="points_div visit">
+            <p>Score : <span class="score to-reset">0</span></p>
+            <button onclick="add('visit', -1)">-1</button>
+            <button onclick="add('visit', 1)">+1</button>
+            <button onclick="add('visit', 2)">+2</button>
+            <button onclick="add('visit', 3)">+3</button>
+        </div>
+
+        <div class="foul_div loc">
+            <p class="foul_counter to-reset">0</p>
+            <button onclick="foulCounter('loc', -1)">-1</button>
+            <button onclick="foulCounter('loc', 1)">+1</button>
+        </div>
+
+        <div class="foul_div visit">
+            <p class="foul_counter to-reset">0</p>
+            <button onclick="foulCounter('visit', -1)">-1</button>
+            <button onclick="foulCounter('visit', 1)">+1</button>
+        </div>
+
+        <div class="last_foul">
+            <p class="loc to-clr">
+                Player Number of foul
+            </p>
+
+            <p class="visit to-clr">
+                Player Number of foul
+            </p>
+        </div>
+
+
+        <div class="possessionDiv">
+            <p><span class="possessionTeam">hop</span></p>
+            <button id="change_possession">Change Possession</button>
+        </div>
+        <div class="loc">
+            <p><span class="timeout to-reset">0</span></p>
+            <button class="timeout-value" onclick="timeoutValue(-1,'loc')">-1</button>
+            <button class="timeout-value" onclick="timeoutValue(1,'loc')">+1</button>
+        </div>
+        <div class="vis">
+            <p><span class="timeout to-reset">0</span></p>
+            <button class="timeout-value" onclick="timeoutValue(-1,'visit')">-1</button>
+            <button class="timeout-value" onclick="timeoutValue(1,'visit')">+1</button>
+        </div>
+
+
+        <div class="resetScoreBoard">
+            <button class="reset-all-button">RESET</button>
+        </div>
+    </div>
+
+</body>
+<script src="scoreboard.js"></script>
+
+</html>

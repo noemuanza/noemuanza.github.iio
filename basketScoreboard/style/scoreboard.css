@@ -1,0 +1,87 @@
+*,
+::before,
+::after {
+    min-width: 20px;
+    min-height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    min-height: 100%;
+    font-family: "Helvetica Neue", "Noto Sans KR", sans-serif;
+    text-align: center;
+}
+
+input {
+    font-family: "Helvetica Neue", "Noto Sans KR", sans-serif;
+}
+
+.formulaire {
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.before-match {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    width: 50%;
+    min-height: 200px;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+.players-list {
+    display: flex;
+    margin: 50px auto 100px;
+    width: 1000px;
+    justify-content: space-around;
+    flex-direction: row;
+    order: -1;
+}
+
+.player-div {
+    width: 40%;
+}
+
+.loc,
+.visit {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.loc {
+    background: royalblue;
+    color: #fff;
+}
+
+.visit {
+    background: #fffff2;
+    color: royalblue;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-around;
+}
+
+.in-match {
+    display: flex;
+}
