@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    height: 100%;
+    /*overflow: hidden;*/
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.question{
+    text-align: center;
+    justify-self: center;
+}
+
+img{
+    height: 35%;
+}
+
+.anwser{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+button{
+    width: 60px;
+}
+.Yes{
+    position: fixed;
+    left: 46%;
+}
+.No{
+    position: fixed;
+    left: 50%;
+}
+
+
+.heart{display: none;}
