@@ -5,5 +5,43 @@
 }
 
 body{
-    background-color: antiquewhite;
+    background-color: #051226;
+}
+
+.pres{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color:#8aa2b5
+}
+
+
+.intro{
+    color:#2dad8b;
+}
+.name{
+    color:#cfdce6;
+    font-size: 60px;
+}
+.phrase{
+    font-size: 50px;
+}
+.description{
+    margin-top: 40px;
+    font-size: 20px;
+    color:#8aa2b5;
+}
+a{
+    text-decoration: none;
+    color:#2dad8b
+}
+
+.projects{
+    font-size : 20px;
+    color:#2dad8b;
+    cursor:pointer;
 }
