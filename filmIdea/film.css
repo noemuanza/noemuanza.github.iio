@@ -1,0 +1,131 @@
+
+
+/* Reset default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+html, body {
+    overflow: hidden;
+     height: 100%
+}
+/* Set default font and color */
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+    background-color:darkmagenta ;
+    color: #333;
+    display: grid; /* Add grid display */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    height: 100%; /* Set body height to 100% */
+
+}
+
+html {
+    height: 100%; /*IMPORTANT*/
+}
+
+/* Add some spacing */
+h1 {
+    margin-bottom: 20px;
+    place-self: center; /*IMPORTANT*/
+    position: relative; /*IMPORTANT*/
+    z-index: 1; /*IMPORTANT*/
+}
+
+.title{
+    color:crimson;
+    font-size: 90px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+.content{
+    width: 40%;
+    margin-bottom: 10px;
+    z-index: -1; /*IMPORTANT*/
+    place-self: center; /*IMPORTANT*/
+    position: absolute; /*IMPORTANT*/
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.hidden {
+    opacity: 0; /*IMPORTANT*/
+    transition: opacity 0.3s;
+  }
+
+
+.appear{
+    opacity: 1;
+    transition:opacity 0.2s;
+}
+
+.appear-after{
+    opacity: 1;
+    transition:1.5s opacity 0.2s;
+}
+
+.appear-after-after{
+    opacity: 1;
+    transition: 3s opacity 0.2s;
+}
+
+
+.low-opacity{
+    opacity: 0.55;
+    transition: opacity 0.2s;
+  }
+
+
+
+.totally-disappear{
+    display: none;
+}
+
+
+
+.blob{
+    background: linear-gradient(to right,aquamarine,mediumpurple);
+    height:150px;
+    position: absolute;
+    aspect-ratio: 1;
+    left:50%;
+    top:50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    z-index: -1;
+    animation: rotation 10s  infinite;
+
+
+}
+
+.blur{
+    height:100%;
+    width:100%;
+    position: absolute;
+    z-index:-1;
+    backdrop-filter: blur(150px);
+}
+
+.bloblur{
+    display: none;
+}
+
+.on-top{
+    position: absolute;
+    z-index: index 2;
+    font-size: 40px;
+
+}
+
+.on-top:hover{
+    /*arrow cursor*/
+    cursor: pointer;
+}
