@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble Puzzle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('./bg.gif');
+            background-size: cover;
+            margin: 0;
+        }
+        .puzzle-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .scrambled-word {
+            font-size: 24px;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .input-container input {
+            font-size: 24px;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .input-container button {
+            font-size: 24px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        .input-container button:hover {
+            background-color: #0056b3;
+        }
+        .hidden-message {
+            display: none;
+            font-size: 24px;
+            color: red;
+            margin-top: 20px;
+        }
+        .hidden-gif {
+            display: none;
+            margin-top: 20px;
+        }
+        .yes-button {
+            font-size: 24px;
+            padding: 15px 30px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            width:100%;
+        }
+        .yes-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="puzzle-container"
+    <div class="puzzle-container" id="puzzleContainer">
+        <div id="scrambledWord" class="scrambled-word"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Unscramble the word">
+            <button onclick="checkAnswer()">Submit</button>
+        </div>
+        <div id="message" class="hidden-message">Do you want to be my girlfriend?</div>
+        <img id="celebrationGif1" class="hidden-gif" src="./janodancing.gif" alt="Celebration GIF">
+        <img id="celebrationGif2" class="hidden-gif" src="./nonodancing.gif" alt="Celebration GIF">
+        <button id="yesButton" class="yes-button hidden-gif" onclick="redirectToInstagram()">YES</button>
+    </div>
+
+    <script>
+        const words = [
+            { scrambled: 'OD', correct: 'DO' },
+            { scrambled: 'UOY', correct: 'YOU' },
+            { scrambled: 'TNAW', correct: 'WANT' },
+            { scrambled: 'OT', correct: 'TO' },
+            { scrambled: 'EB', correct: 'BE' },
+            { scrambled: 'YM', correct: 'MY' },
+            { scrambled: 'RLIRFDEGN', correct: 'GIRLFRIEND' }
+        ];
+
+        let currentWordIndex = 0;
+
+        const scrambledWord = document.getElementById('scrambledWord');
+        const userInput = document.getElementById('userInput');
+        const message = document.getElementById('message');
+        const celebrationGif1 = document.getElementById('celebrationGif1');
+        const celebrationGif2 = document.getElementById('celebrationGif2');
+        const yesButton = document.getElementById('yesButton');
+        const puzzleContainer = document.getElementById('puzzleContainer');
+
+        function loadWord() {
+            scrambledWord.textContent = words[currentWordIndex].scrambled;
+            userInput.value = '';
+        }
+
+        function checkAnswer() {
+            if (userInput.value.toUpperCase() === words[currentWordIndex].correct) {
+                currentWordIndex++;
+                if (currentWordIndex < words.length) {
+                    loadWord();
+                } else {
+                    puzzleContainer.innerHTML = '';
+                    puzzleContainer.appendChild(message);
+                    puzzleContainer.appendChild(celebrationGif1);
+                    puzzleContainer.appendChild(celebrationGif2);
+                    puzzleContainer.appendChild(yesButton);
+                    message.style.display = 'block';
+                    celebrationGif1.style.display = 'block';
+                    celebrationGif2.style.display = 'block';
+                    yesButton.style.display = 'block';
+                }
+            } else {
+                alert('Try again!');
+            }
+        }
+
+        function redirectToInstagram() {
+            window.location.href = 'http://instagram.com';
+        }
+
+        loadWord();
+    </script>
+</body>
+</html>

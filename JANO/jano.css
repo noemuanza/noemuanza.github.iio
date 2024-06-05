@@ -1,0 +1,41 @@
+body {
+    background: url('./bg.gif');
+}
+
+.nono-walking {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: slide 15s linear forwards; /* Add forwards to keep the final state */
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    gap: 15px;
+}
+
+@keyframes slide {
+    0% {
+        left: -50px; /* Start off screen to the left */
+    }
+    50% {
+        left: calc(47.5% - 25px); /* Move to the middle */
+    }
+    100% {
+        left: calc(47.5% - 25px); /* Stay in the middle */
+    }
+}
+
+img {
+    scale: calc(2);
+}
+
+
+.title{
+    position:absolute;
+    top:45%;
+    left:42.5%;
+    scale:calc(1.2);
+}
