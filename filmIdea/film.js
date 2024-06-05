@@ -9,10 +9,16 @@ const blob = document.querySelector('.blob');
 const body = document.body;
 const bloblur = document.querySelectorAll(".bloblur");
 
-let loginsList = ["bla","bli","log","abc","def","ghi","jkl","mno","pqr","stu","vwx","yz","123","456","789","0"];
+let loginsList = ["Le parfum","Whiplash","Shutter Island","Babylon","Oppeneimer","Portrait d'une jeune fille en feu",
+"Interstellar", "Inception", "The Dark Knight", "Memento", "The Prestige"];
 
 //console.log(title.innerText);
 //console.log(text.innerText);
+
+
+title.addEventListener('click',()=>{
+    intervalSpawn(loginsList.length);
+});
 
 title.addEventListener('mouseover',()=>{
     //console.log("over");
@@ -80,7 +86,7 @@ function createDiv(){
             setTimeout(()=>{
                 div.style.opacity = "0";
                 div.style.transition = "opacity 1s";
-            },1000);
+            },2500);
         });
     });
 }
@@ -97,5 +103,5 @@ let intervalSpawn = ((n)=>{
 });
 
 
-intervalSpawn(loginsList.length);
+
 
